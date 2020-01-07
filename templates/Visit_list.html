@@ -1,0 +1,10 @@
+
+{% block content %}
+
+<h2>Lista Wizyt:</h2>
+        <ul>
+            {% for vis in visits %}
+            <li>{{ vis.date_visit}} {{ vis.patient}} {{ vis.general}} {{ vis.details}}</li>
+            {% endfor %}
+        </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+<html>
+    <head><meta charset="utf-8"></head>
+    <body>
+        <h1>Szkoła podstawowa nr 1 im. Chucka Norrisa.</h1>
+        {% if user.is_authenticated %}
+            <h2>Witaj {{ user.username }}!</h2>
+            <small><a href="{% url 'logout' %}">Wyloguj się</a></small>
+        {% else %}
+            <small><a href="{% url 'login' %}">Zaloguj się</a></small>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

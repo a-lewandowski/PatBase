@@ -1,0 +1,10 @@
+
+{% block content %}
+
+<h2>Lista Pacjentów:</h2>
+        <ul>
+            {% for pat in patients %}
+            <li>{{ pat.first_name}} {{ pat.last_name}} {{ pat.year_of_birth}} {{ pat.phone}}</li>
+            {% endfor %}
+        </ul>
+{% endblock %}
