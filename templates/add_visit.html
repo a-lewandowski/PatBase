@@ -1,13 +1,9 @@
 {% block content %}
-    <form action="{% url 'add-patient' %}" method="post">
+    <form action="add_visit.html" method="post">
         {% csrf_token %}
         {{  form.as_p }}
         <input type="submit" value="Dodaj">
     </form>
 
-
-    {% if result %}
-        <a href="Pt_list.html">Lista pacjentów</a>
-    {% endif %}
 
 {% endblock %}

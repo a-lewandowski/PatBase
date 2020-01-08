@@ -1,5 +1,4 @@
 from django.shortcuts import render
-# from .models import Patient, Visit
 from django.urls import reverse_lazy
 from django.views import View
 from .models import Patient, Visit
@@ -39,6 +38,12 @@ class PatientVisitView(View):
 class AddPatientCreateView(CreateView):
     model = Patient
     fields = "__all__"
-        # ['first_name','last_name']
     template_name = 'add_patient.html'
     success_url = reverse_lazy('patients')
+
+
+class AddVisitCreateView(CreateView):
+    model = Visit
+    fields = "__all__"
+    template_name = 'add_visit.html'
+    success_url = reverse_lazy('visits')
