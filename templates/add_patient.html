@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'add-student' %}" method="post">
+        {% csrf_token %}
+        {{  form.as_p }}
+        <input type="submit" value="Dodaj">
+    </form>
+
+    {% if result %}
+        <ul>
+        {% for student in result %}
+            <li><a href="{% url 'student-detail' student.pk %}">{{ student.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
