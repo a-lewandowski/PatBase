@@ -1,10 +1,12 @@
 
 {% block content %}
 
+<p>{{ patient.first_name}} {{ patient.last_name}} {{ patient.year_of_birth}} {{ patient.phone}}</p>
+
 <h2>Lista Wizyt:</h2>
         <ul>
             {% for vis in visits %}
-            <li>{{ vis.date_visit}} {{ vis.patient}} {{ vis.general}} {{ vis.details}}</li>
+            <li>{{ vis.date_visit}} {{ vis.general}} {{ vis.details}}</li>
             {% endfor %}
         </ul>
 {% endblock %}

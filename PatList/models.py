@@ -17,4 +17,3 @@ class Visit(models.Model):
     details = models.TextField(null=True)
 
 
-

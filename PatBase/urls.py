@@ -15,15 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from PatList.views import PatientView, VisitView
+from PatList.views import PatientView, VisitView, AddPatientCreateView, PatientVisitView
 from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', PatientView.as_view(), name="patients"),
     path('visits/', VisitView.as_view(), name="visits"),
-
-    # re_path(r'^show_band/(?P<id_Band>\d+)$', zad2_7),
-    # path('start_end/<int:start>/<int:end>', start_end, name='start_end'),
+    url(r'^add_patient/', AddPatientCreateView.as_view(), name="add-patient"),
+    url(r'^patvis/(?P<patient_id>(\d)+)/', PatientVisitView.as_view(), name="patientvisit"),
 
 ]
