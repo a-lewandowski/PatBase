@@ -4,7 +4,9 @@
 <h2>Lista Pacjentów:</h2>
         <ul>
             {% for pat in patients %}
-            <li>{{ pat.first_name}} {{ pat.last_name}} {{ pat.year_of_birth}} {{ pat.phone}}</li>
+            <li>{{ pat.first_name}} <a href="/patvis/{{ pat.pk }}/"> {{ pat.last_name}} </a> {{ pat.year_of_birth}} {{ pat.phone}}</li>
             {% endfor %}
         </ul>
 {% endblock %}
+
+
